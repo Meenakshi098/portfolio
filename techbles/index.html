@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techlabs</title>
+
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <link href="layout.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="main-header">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" class="nav-icons"
+                    onclick="showMenu()">
+                    <path
+                        d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L96 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="207"
+                    height="40" viewBox="0 0 207 40">
+                    <image width="207" height="40"
+                        xlink:href="data:img/png;base64,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" />
+                </svg>
+                <nav class="nav-links" id="navlinks">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="20" height="20"
+                        class="nav-icons cross-icon" onclick="hideMenu()">
+                        <path
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+                    </svg>
+
+                    <ul>
+                        <li><a href="#">Digital Security</a></li>
+                        <li><a href="#">Streaming</a></li>
+                        <li><a href="#">Internet</a></li>
+                    </ul>
+                </nav>
+
+                <form class="search-bar" id="searchicon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="grey">
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                    <input type="text" name="search" placeholder="Search Here">
+                </form>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="grey"
+                    class="search-icon" onclick="showSearch()">
+                    <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                </svg>
+
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="cards-bg mt-5">
+            <div class="container">
+                <div class="big-card mb-4">
+                    <div class="card-content">
+                        <a href="#" class="catg">Internet</a>
+                        <a href="#">
+                            <h2 class="way-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit</h2>
+                        </a>
+                        <p>
+                            Imagine! You are ready to watch your favorite film but find that EZTV is restricted in your
+                            region.
+                            It's frustrating,… </p>
+                    </div>
+                    <div class="card-img">
+                        <img src="images/eztv-proxy.webp" class="img-fluid">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card mb-4">
+                            <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                            <div class="card-body">
+                                <div class="cat-g">Internet</div>
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <p class="author">By Priya Prakash</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card mb-4">
+                            <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                            <div class="card-body">
+                                <div class="cat-g">Internet</div>
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <p class="author">By Priya Prakash</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card mb-4">
+                            <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                            <div class="card-body">
+                                <div class="cat-g">Internet</div>
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <p class="author">By Priya Prakash</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards-bg mt-5">
+            <div class="separator">
+                Streaming
+            </div>
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-lg-6 col-md-4">
+                        <div class="small-cards way-card">
+                            <div class="img-placeholder">
+                                <img src="images/eztv-proxy.webp" class="img-fluid">
+                            </div>
+                            <div class="card-content">
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <div class="author">By Priya Prakash</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-md-4">
+                        <div class="small-cards way-card ">
+                            <div class="img-placeholder">
+                                <img src="images/eztv-proxy.webp" class="img-fluid">
+                            </div>
+                            <div class="card-content">
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <div class="author">By Priya Prakash</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 ">
+                        <div class="small-cards way-card ">
+                            <div class="img-placeholder">
+                                <img src="images/eztv-proxy.webp" class="img-fluid">
+                            </div>
+                            <div class="card-content">
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <div class="author">By Priya Prakash</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4">
+                        <div class=" small-cards way-card">
+                            <div class="img-placeholder">
+                                <img src="images/eztv-proxy.webp" class="img-fluid">
+                            </div>
+                            <div class="card-content">
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <div class="author">By Priya Prakash</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4">
+                        <div class="small-cards way-card ">
+                            <div class="img-placeholder">
+                                <img src="images/eztv-proxy.webp" class="img-fluid">
+                            </div>
+                            <div class="card-content">
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <div class="author">By Priya Prakash</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-4 ">
+                        <div class="small-cards way-card">
+                            <div class="img-placeholder">
+                                <img src="images/eztv-proxy.webp" class="img-fluid">
+                            </div>
+                            <div class="card-content">
+                                <h5 class="way-card mt-mb">
+                                    Exploring Wavr-297: Features, Functioning, and Challenges
+                                </h5>
+                                <div class="author">By Priya Prakash</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="cards-bg mt-5">
+            <div class="separator">VPN</div>
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card mb-4">
+                                <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                                <div class="card-body">
+                                    <div class="cat-g">Internet</div>
+                                    <h5 class="way-card mt-mb">
+                                        Exploring Wavr-297: Features, Functioning, and Challenges
+                                    </h5>
+                                    <p class="author">By Priya Prakash</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card mb-4">
+                                <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                                <div class="card-body">
+                                    <div class="cat-g">Internet</div>
+                                    <h5 class="way-card mt-mb">
+                                        Exploring Wavr-297: Features, Functioning, and Challenges
+                                    </h5>
+                                    <p class="author">By Priya Prakash</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <div class="card mb-4">
+                                <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                                <div class="card-body">
+                                    <div class="cat-g">Internet</div>
+                                    <h5 class="way-card mt-mb">
+                                        Exploring Wavr-297: Features, Functioning, and Challenges
+                                    </h5>
+                                    <p class="author">By Priya Prakash</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card mb-4">
+                                <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                                <div class="card-body">
+                                    <div class="cat-g">Internet</div>
+                                    <h5 class="way-card mt-mb">
+                                        Exploring Wavr-297: Features, Functioning, and Challenges
+                                    </h5>
+                                    <p class="author">By Priya Prakash</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card mb-4">
+                                <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                                <div class="card-body">
+                                    <div class="cat-g">Internet</div>
+                                    <h5 class="way-card mt-mb">
+                                        Exploring Wavr-297: Features, Functioning, and Challenges
+                                    </h5>
+                                    <p class="author">By Priya Prakash</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="card  mb-4">
+                                <img src="images/eztv-proxy.webp" alt="" class="card-img">
+                                <div class="card-body">
+                                    <div class="cat-g">Internet</div>
+                                    <h5 class="way-card mt-mb">
+                                        Exploring Wavr-297: Features, Functioning, and Challenges
+                                    </h5>
+                                    <p class="author">By Priya Prakash</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="overlay-box">
+                        <div class="overlay-img">
+                            <img src="images/eztv-proxy.webp" class="img-fluid">
+                        </div>
+                        <div class="overlay-content">
+                            <div class="cat-g">Internet</div>
+                            <h4> Exploring Wavr-297: Features, Functioning, and Challenges</h4>
+                            <p class="author">By Priya Prakash</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards-bg mt-5">
+            <div class="separator">Internet</div>
+            <div class="row mt-5">
+                <div class="col-lg-4 col-md-12 d-flex ">
+                    <div class="way-card1 bg-white border-0 mb-4">
+                        <div class="image-placeholder">
+                            <img src="images/eztv-proxy.webp" alt="" class="img-fluid">
+                        </div>
+                        <div class="way-card-content">
+                            <div class="cat-g">Internet</div>
+                            <h5 class="way-card mt-mb">
+                                Exploring Wavr-297: Features, Functioning, and Challenges
+                            </h5>
+                            <p class="author">By Priya Prakash</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="cerial-card">
+                        <div class=" way-card">
+                            <a href="#">Exploring Wavr-297: Features, Functioning, and Challenges</a>
+                        </div>
+                        <p class="author">By Priya Prakash</p>
+                    </div>
+                    <div class="cerial-card">
+                        <div class=" way-card">
+                            <a href="#">Exploring Wavr-297: Features, Functioning, and Challenges</a>
+                        </div>
+                        <p class="author">By Priya Prakash</p>
+                    </div>
+                    <div class="cerial-card">
+                        <div class="way-card">
+                            <a href="#">Exploring Wavr-297: Features, Functioning, and Challenges</a>
+                        </div>
+                        <p class="author">By Priya Prakash</p>
+                    </div>
+                    <div class="cerial-card"></div>
+                    <div class="way-card">
+                        <a href="#">Exploring Wavr-297: Features, Functioning, and Challenges</a>
+                    </div>
+                    <p class="author">By Priya Prakash</p>
+                </div>
+                <div class="col-lg-4 col-md-12 d-flex">
+                    <div class="way-card1 bg-white border-0 mb-4">
+                        <div class="image-placeholder">
+                            <img src="images/eztv-proxy.webp" alt="" class="img-fluid">
+                        </div>
+                        <div class="way-card-content">
+                            <div class="cat-g">Internet</div>
+                            <h5 class="way-card mt-mb">
+                                Exploring Wavr-297: Features, Functioning, and Challenges
+                            </h5>
+                            <p class="author">By Priya Prakash</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer class="footer ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-top">
+                        <a href="#">
+                            <img src="images/WHITE.svg">
+                        </a>
+                        <div class="social-container">
+                            <span>Follow Tech Bles on Social Media</span>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="facebook.com" target="_blank" rel="no-follow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="10" fill="white"
+                                            viewBox="0 0 320 512">
+                                            <path
+                                                d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5 16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0 129.3 0 80 50.5 80 159.4v42.1H14v97.8h66z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="facebook.com" target="_blank" rel="no-follow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" fill="white"
+                                            viewBox="0 0 512 512">
+                                            <path
+                                                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9L389.2 48zm-24.8 373.8h39.1L151.1 88h-42l255.3 333.8z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="facebook.com" target="_blank" rel="no-follow">
+                                        <svg width="18" height="18" fill="white" viewBox="0 0 5.76 5.76"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M5.22 2.88a2.34 2.34 0 0 1 -2.987 2.249l0.221 -0.883a1.132 1.132 0 0 0 0.606 0.164C3.854 4.41 4.5 3.724 4.5 2.88a1.62 1.62 0 1 0 -3.122 0.608 0.18 0.18 0 0 0 0.333 -0.135 1.26 1.26 0 1 1 2.429 -0.472c0 0.645 -0.485 1.17 -1.08 1.17a0.749 0.749 0 0 1 -0.512 -0.18l0.326 -1.306a0.18 0.18 0 0 0 -0.349 -0.088l-0.631 2.526A2.34 2.34 0 1 1 5.22 2.88Z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="facebook.com" target="_blank" rel="no-follow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14"
+                                            viewBox="0 0 448 512" fill="white">
+                                            <path
+                                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="facebook.com" target="_blank" rel="no-follow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14"
+                                            viewBox="0 0 448 512" fill="white">
+                                            <path
+                                                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="facebook.com" target="_blank" rel="no-follow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            viewBox="0 0 16 16" fill="white">
+                                            <path
+                                                d="M15.268 4.336a1.906 1.906 0 0 0-1.341-1.35C12.744 2.666 8 2.666 8 2.666s-4.744 0-5.927.32a1.906 1.906 0 0 0-1.341 1.35C.415 5.526.415 8.01.415 8.01s0 2.484.317 3.675a1.878 1.878 0 0 0 1.341 1.328c1.183.32 5.927.32 5.927.32s4.744 0 5.927-.32a1.878 1.878 0 0 0 1.341-1.328c.317-1.19.317-3.675.317-3.675s0-2.485-.317-3.675Zm-8.82 5.93v-4.51l3.965 2.255-3.965 2.255Z">
+                                            </path>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="footer-menu mt-4">
+                        <div class="menu-heading mb-4">
+                            Trending Categories
+                        </div>
+                        <ul>
+                            <li>Digital Security</li>
+                            <li>Digital Security</li>
+                            <li>Digital Security</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-menu d2 mt-4">
+                        <div class="menu-heading mb-4">
+                            Important Links
+                        </div>
+                        <ul>
+                            <li>About Us </li>
+                            <li>Contact Us</li>
+                            <li>Authors</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms of use</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong>
+                "The information available on the site is only available for informational purposes at the user’s sole risk. We take no guarantee of the accurateness, value, or completeness of the information and shall not be held responsible or liable for any errors, omissions, or inaccuracies in the information or if any user is solely relied on the information. User is himself responsible for verifying the information as being appropriate for personal use. We don’t claim to be officially related to any brands, products or services mentioned on the website and have no right to them. We only offer support guides and the images, names, media or links used on the website are just for the reference and informational purpose only."
+            </p>
+        </div>
+        <div class="copyright">
+            
+			© 2024 Techbles.com. All rights are reserved        
+        </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>

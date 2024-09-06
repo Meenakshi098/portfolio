@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Collage site</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <header class="header other-sec">
+        <nav>
+            <img src="Images/logo.png" class="logo">
+            <div class="nav-links" id="navLinks">
+                <i class='bx bx-x' onclick="hideMenu()"></i>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="course.html">Course</a>
+                    </li>
+                    <li>
+                        <a href="blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <i class='bx bx-menu' onclick="showMenu()"></i>
+        </nav>
+        <h1 class="text-center">Contact Us</h1>
+    </header>
+
+    <!--Contact Us page-->
+    <section class="mt-5">
+        <div class="container location">
+            <div class="row">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1jjdOnB91E1dK8dHGVI3h8cHWE40&hl=en_US&ehbc=2E312F"
+                    width="640" height="480" class="border-0"></iframe>
+            </div>
+    </section>
+    <section class="mt-5">
+        <div class="container ">
+            <div class="row">
+                <div class="col-lg-6 contact-page">
+                    <div>
+                        <i class='bx bxs-home contact-icon'></i>
+                        <span>
+                            <h5>XYZ ABC Building</h5>
+                            <p>Banglore, karnatka</p>
+                        </span>
+                    </div>
+                    <div>
+                        <i class='bx bx-phone contact-icon'></i>
+                        <span>
+                            <h5>09900158340</h5>
+                            <p>Monday to saturday 10Am to6Pm</p>
+                        </span>
+
+                    </div>
+                    <div>
+                        <i class='bx bx-envelope contact-icon'></i>
+                        <span>
+                            <h5>info@gmail.com</h5>
+                            <p>Banglore, karnatka, IN</p>
+                        </span>
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Enter Name" class="form-text contact-text">
+                        <br>
+                        <input type="email" placeholder="Enter Email Address" class="  form-text contact-text">
+                        <br>
+                        <input type="email" placeholder="Enter Subject" class=" form-text contact-text">
+                        <br>
+                        <textarea class=" form-text contact-text" placeholder="Your comment"></textarea>
+                        <button type="Submit" class="btn btn1">Post Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+  
+    </body>
+    </html>

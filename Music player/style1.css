@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:"roboto" sans-serif;
+}
+.bg{
+    background-color: rgb(15, 4, 63);
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+.navbar-nav .nav-item{
+    color: white;
+}
+.nav-item .nav-link{
+    color: white;
+}
+.nav-item .nav-link:hover{
+    border-bottom: 1px solid white;
+    transition: -0.01s ease-in-out;
+}
+.hero-section{
+    background: url(Images/hero_image.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-top: 40px;
+}
+.hero-section h1{
+    font-size: 80px;
+    font-weight: 600;
+}
+.music-section {
+    background-color: rgb(29, 8, 49);
+    
+
+}
+.music-section .container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-top: 20px;
+   
+
+}
+.music-section .container img{
+    position: relative;
+    top: 150px;
+    width: 80%;
+    height: auto;
+
+}
+.about-music-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-top: 300px;
+}
+.Secondary{
+    border: none;
+    padding: 8px;
+    color: white;
+    background-color: rgb(48, 11, 109);
+}
+.about-music-section img{
+    width: 80%;
+    height: auto;   
+}
+.video-section{
+    background-image: url(Images/video.png);
+    height: 80vh;
+}
+.video-section .container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding-top: 40px;
+}
+.giftcard .container{
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    
+}
+.footer{
+    background-color: rgb(34, 5, 116);
+    margin-top: 80px;
+}
+.footer .container{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.footer-links h4{
+   border-bottom: 2px solid white;
+}
+.footer-links ul {
+    list-style: none;
+}
+.footer-part{
+    background-color: rgb(4, 4, 29);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+@media screen and (max-width:900px){
+   .giftcard .container{
+    flex-direction: column;
+   }
+   .img1 img{
+    width: 100%;
+    height: auto;
+}
+.footer .container{
+    flex-direction: column;
+}
+.footer-links h4{
+    border-bottom: 50%
+    
+}
+
+}

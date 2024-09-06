@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layout.css">
+
+</head>
+
+<body>
+    <div class="container-fluid header-img">
+        <div class="header-txt">
+            <h1>Hella</h1>
+            <h3>Lifestyler</h3>
+            <p>This blog for the people who care about health foold</p>
+            <hr class="smallhr">
+        </div>
+        <div class="bx bx1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" viewBox="0 0 448 512"
+                onclick="showMenu()">
+                <path
+                    d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+            </svg>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-links" id="navLinks">
+            <div class="bx">
+                <svg width="20" height="20" viewBox="0 0 384 512" fill="black" xmlns="http://www.w3.org/2000/svg"
+                    onclick="hideMenu()">
+                    <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256l105.3-105.4z">
+                    </path>
+                </svg>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="about.html">Featured</a>
+                </li>
+                <li>
+                    <a href="course.html">Breakfast</a>
+                </li>
+                <li>
+                    <a href="blog.html">fruits </a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <div class="icons">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon">
+                    <path
+                        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+                </svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon">
+                    <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path
+                        d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon">
+                    <path
+                        d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3 .8-3.4 5-20.3 6.9-28.1 .6-2.5 .3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z" />
+                </svg>
+
+
+            </div>
+        </div>
+    </nav>
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mt-sm-4">
+                    <div class="card">
+
+                        <div class="img-placeholder">
+                            <a href="#">
+                                <img src="Images/Post 1.jpg" class="card-img">
+                            </a>
+                        </div>
+
+                        <div class="card-content one">
+                            <p>Breakfast</p>
+                            <h3>This is first blog post</h3>
+                            <span><a href="#">Read More</a></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+                    <div class="card">
+
+                        <div class="img-placeholder">
+                            <a href="#">
+                                <img src="Images/Post 2.jpg" class="card-img">
+                            </a>
+                        </div>
+
+                        <div class="card-content one">
+                            <p>Breakfast</p>
+                            <h3>This is first blog post</h3>
+                            <span><a href="#">Read More</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-sm-4">
+                    <div class="card">
+
+                        <div class="img-placeholder">
+                            <a href="#">
+                                <img src="Images/Post 3.jpg" class="card-img">
+                            </a>
+                        </div>
+
+                        <div class="card-content one">
+                            <p>Breakfast</p>
+                            <h3>This is first blog post</h3>
+                            <span> <a href="#">Read More</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form mt-5">
+                <div class="col-md-6">
+                    <div class="content">
+                        <h3>Want to get weekly tricks and tips?</h3>
+                        <p>SignUP and receive your first email immediately</p>
+                    </div>
+                </div>
+                <div class="col-md-6 form-content mt-sm-4">
+                    <input type="text" class="textbox" placeholder="Your Email"><button type="submit"
+                        class="btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8  post">
+                    <div class="row">
+                        <div class="col-md-6 mb-sm-4">
+                            <div class="card">
+                                <a href="#"><img src="Images/Post 1.jpg" class="card-img"> </a>
+                                <div class=" card-body post-text for-link">
+                                    <h3 class="card-title">Make a healthy routine for you</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Doloremque,
+                                        dicta?</p>
+                                    <a href="#" class="link">Read More</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-sm-4">
+                            <div class="card">
+                                <a href="#"><img src="Images/Post 2.jpg" class="card-img"> </a>
+                                <div class=" card-body post-text for-link">
+                                    <h3 class="card-title">Make a healthy routine for you</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Doloremque,
+                                        dicta?</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-sm-4 ">
+                            <div class="card">
+                                <a href="#"><img src="Images/Post 3.jpg" class="card-img"> </a>
+                                <div class="card-body post-text for-link">
+                                    <h3 class="card-title">Make a healthy routine for you</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Doloremque,
+                                        dicta?</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-sm-4">
+                            <div class="card">
+                                <a href="#"><img src="Images/Post 4.jpg" class="card-img"> </a>
+                                <div class=" card-body post-text for-link">
+                                    <h3 class="card-title">Make a healthy routine for you</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Doloremque,
+                                        dicta?</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6   mb-sm-4">
+                            <div class="card">
+                                <a href="#"><img src="Images/Post 5.jpg" class="card-img"> </a>
+                                <div class=" card-body post-text for-link">
+                                    <h3 class="card-title">Make a healthy routine for you</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Doloremque,
+                                        dicta?</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-sm-4">
+                            <div class="card">
+                                <a href="#"><img src="Images/Post 6.jpg" class="card-img"> </a>
+                                <div class="card-body post-text for-link">
+                                    <h3 class="card-title">Make a healthy routine for you</h3>
+                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Doloremque,
+                                        dicta?</p>
+                                    <a href="#" class="link">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-lg-4 sidebar">
+                    <div class="card">
+
+                        <div class="img-placeholder">
+                            <a href="#">
+                                <img src="Images/Post 3.jpg" class="card-img">
+                            </a>
+                        </div>
+                        <div class=" two mb-4">
+                            <h3>Sofia VOgio</h3>
+                            <span>Full time health blogger</span>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, dolorum.</p>
+                        </div>
+                    </div>
+                    <h3>My personal favourites</h3>
+                    <hr class=" bighr w-50 mb-4">
+                    <div class="row">
+                        <div class=" col-lg-6 col-md-4 mb-4">
+                            <div class="card favourite">
+                                <img src="Images/Post 7.jpg">
+                            </div>
+                        </div>
+                        <div class="col-md-6  mb-4 ">
+
+                            <h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
+                            <a href="#" class="for-link1">Read More</a>
+
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-4  mb-4">
+                            <div class="card favourite">
+                                <img src="Images/Post 4.jpg">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
+                            <a href="#" class="for-link1">Read More</a>
+
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-4  mb-4">
+                            <div class="card favourite">
+                                <img src="Images/Post 5.jpg">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 ">
+
+                            <h4 class="card-title">Lorem ipsum dolor sit amet.</h4>
+                            <a href="#" class="for-link1">Read More</a>
+
+                        </div>
+                    </div>
+
+                    <h3>Interesting</h3>
+                    <hr class=" bighr w-50">
+
+                    <div class="card mt-4">
+                        <div class="image">
+                            <img src="Images/Post 5.jpg" class="img-fluid card-img">
+                        </div>
+                        <div class="last-content text-center">
+                            <h3>Vitamin C Now also available in a simple package</h3>
+                            <button class="btn1">Shop Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer mt-5">
+        <div class="row footer-sec fluid-container text-center">
+            <div class="col-md-6">
+                <h3>Get Connected with us on social network</h3>
+            </div>
+            <div class=" col-md-6 icons">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon">
+                    <path
+                        d="M549.7 124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8 64 288 64 288 64S117.2 64 74.6 75.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C117.2 448 288 448 288 448s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zm-317.5 213.5V175.2l142.7 81.2-142.7 81.2z" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon">
+                    <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon">
+                    <path
+                        d="M459.4 151.7c.3 4.5 .3 9.1 .3 13.6 0 138.7-105.6 298.6-298.6 298.6-59.5 0-114.7-17.2-161.1-47.1 8.4 1 16.6 1.3 25.3 1.3 49.1 0 94.2-16.6 130.3-44.8-46.1-1-84.8-31.2-98.1-72.8 6.5 1 13 1.6 19.8 1.6 9.4 0 18.8-1.3 27.6-3.6-48.1-9.7-84.1-52-84.1-103v-1.3c14 7.8 30.2 12.7 47.4 13.3-28.3-18.8-46.8-51-46.8-87.4 0-19.5 5.2-37.4 14.3-53 51.7 63.7 129.3 105.3 216.4 109.8-1.6-7.8-2.6-15.9-2.6-24 0-57.8 46.8-104.9 104.9-104.9 30.2 0 57.5 12.7 76.7 33.1 23.7-4.5 46.5-13.3 66.6-25.3-7.8 24.4-24.4 44.8-46.1 57.8 21.1-2.3 41.6-8.1 60.4-16.2-14.3 20.8-32.2 39.3-52.6 54.3z" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon">
+                    <path
+                        d="M496 256c0 137-111 248-248 248-25.6 0-50.2-3.9-73.4-11.1 10.1-16.5 25.2-43.5 30.8-65 3-11.6 15.4-59 15.4-59 8.1 15.4 31.7 28.5 56.8 28.5 74.8 0 128.7-68.8 128.7-154.3 0-81.9-66.9-143.2-152.9-143.2-107 0-163.9 71.8-163.9 150.1 0 36.4 19.4 81.7 50.3 96.1 4.7 2.2 7.2 1.2 8.3-3.3 .8-3.4 5-20.3 6.9-28.1 .6-2.5 .3-4.7-1.7-7.1-10.1-12.5-18.3-35.3-18.3-56.6 0-54.7 41.4-107.6 112-107.6 60.9 0 103.6 41.5 103.6 100.9 0 67.1-33.9 113.6-78 113.6-24.3 0-42.6-20.1-36.7-44.8 7-29.5 20.5-61.3 20.5-82.6 0-19-10.2-34.9-31.4-34.9-24.9 0-44.9 25.7-44.9 60.2 0 22 7.4 36.8 7.4 36.8s-24.5 103.8-29 123.2c-5 21.4-3 51.6-.9 71.2C65.4 450.9 0 361.1 0 256 0 119 111 8 248 8s248 111 248 248z" />
+                </svg>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-3 col-md-4">
+                    <h3>Company Name</h3>
+                    <hr class="bighr mb-4">
+                    <p class=" text center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sit
+                        architecto impedit cumque non
+                        quis placeat sequi esse ullam animi!</p>
+                </div>
+                <div class="col-lg-3 col-md-4 footer-links">
+                    <h3>products</h3>
+                    <hr class="bighr mb-4">
+                    <ul>
+                        <li><a href="#">MmDBootstrap</a></li>
+                        <li> <a href="#">MDWordpress</a></li>
+                        <li><a href="#">MDBlow</a></li>
+                        <li><a href="#">Bootstrap algorithm</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 footer-links">
+                    <h3>Important Links</h3>
+                    <hr class="bighr mb-4">
+                    <ul>
+                        <li><a href="#">Home </a></li>
+                        <li><a href="#">Featured</a></li>
+                        <li><a href="#">Breakfast</a></li>
+                        <li><a href="#">Fruit</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+
+                    <h3>Contact</h3>
+                    <hr class="bighr mb-4">
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20px" height="20px"
+                            class="footer-icon">
+                            <path
+                                d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                        </svg>New York, NY 10012, US</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px"
+                            class="footer-icon">
+                            <path
+                                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+                        </svg>info@example.com</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px"
+                            class="footer-icon">
+                            <path
+                                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+                        </svg>+ 01 234 567 88</p>
+                    <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px"
+                            class="footer-icon">
+                            <path
+                                d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                        </svg>+ 01 234 567 89</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./Script.js"></script>
+</body>
+
+
+</html>
